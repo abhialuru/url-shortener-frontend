@@ -5,7 +5,7 @@ import { FormEvent, useState } from "react";
 function ShortURL() {
   const [originalUrl, setOriginalUrl] = useState("");
   const [error, setError] = useState("");
-  const [shortUrl, setShortUrl] = useState("jdfpfidp");
+  const [shortUrl, setShortUrl] = useState("");
   const [loading, setLoading] = useState(false);
   const [copied, setCopied] = useState<"short" | "original" | null>(null);
 

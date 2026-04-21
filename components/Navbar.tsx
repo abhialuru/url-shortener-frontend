@@ -1,7 +1,7 @@
 function Navbar() {
   return (
     <nav className="w-full flex justify-between items-center p-5 md:p-10">
-      <div className="italic text-xl font-bold">*shrinkURL</div>
+      <div className="italic text-xl font-bold">*shortenUp</div>
       <a
         href="https://github.com/abhialuru/url_shortner_backend"
         target="_blank"
