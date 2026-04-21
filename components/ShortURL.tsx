@@ -5,7 +5,7 @@ import { FormEvent, useState } from "react";
 function ShortURL() {
   const [originalUrl, setOriginalUrl] = useState("");
   const [error, setError] = useState("");
-  const [shortUrl, setShortUrl] = useState("");
+  const [shortUrl, setShortUrl] = useState("jdfpfidp");
   const [loading, setLoading] = useState(false);
   const [copied, setCopied] = useState<"short" | "original" | null>(null);
 
@@ -59,7 +59,7 @@ function ShortURL() {
   }
 
   return (
-    <section className="w-[80%] max-w-8xl   border-2 border-gray-100 bg-white rounded-2xl mx-auto mb-20 p-7">
+    <section className="w-[90%] md:w-[80%] max-w-8xl   border-2 border-gray-100 bg-white rounded-2xl mx-auto mb-20 p-4 md:p-7">
       {shortUrl ? (
         <div className="flex flex-col gap-10">
           <div className="flex flex-col gap-3">
@@ -77,9 +77,9 @@ function ShortURL() {
                 className="w-16 py-4 bg-zinc-950 text-white flex justify-center items-center rounded-lg"
               >
                 {copied === "short" ? (
-                  <Check className="size-8" />
+                  <Check className="size-5 md:size-8" />
                 ) : (
-                  <Copy className="size-8" />
+                  <Copy className="size-5 md:size-8" />
                 )}
               </button>
             </div>
@@ -99,9 +99,9 @@ function ShortURL() {
                 className="w-16 py-4 bg-zinc-950 text-white rounded-lg flex justify-center items-center"
               >
                 {copied === "original" ? (
-                  <Check className="size-8" />
+                  <Check className="size-5 md:size-8" />
                 ) : (
-                  <Copy className="size-8" />
+                  <Copy className="size-5 md:size-8" />
                 )}
               </button>
             </div>
@@ -116,7 +116,7 @@ function ShortURL() {
       ) : (
         <div className="flex flex-col gap-10">
           <div className="flex flex-col gap-3">
-            <h1 className="text-3xl">Shorten your long link</h1>
+            <h1 className="text-xl md:text-3xl ">Shorten your long link</h1>
             <p className="opacity-70">Free, fast and ready to use</p>
           </div>
           <form onSubmit={handleURL} className="flex flex-col gap-10">
@@ -126,6 +126,7 @@ function ShortURL() {
               onChange={(e) => setOriginalUrl(e.target.value)}
               className="p-4 w-full rounded-xl placeholder:text-gray-500 border-2 border-gray-700"
               placeholder="https://example.com/my-long-url"
+              required
             />
             <button
               disabled={loading}
